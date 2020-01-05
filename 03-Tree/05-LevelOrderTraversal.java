@@ -50,3 +50,30 @@
         } 
         
       }
+
+//-------------------------------------------Above code has O(n^2) time complexity---------
+
+
+//-----------------------------Below code has O(n) time complexity using Queue's-------
+/* 
+    
+    class Node 
+    	int data;
+    	Node left;
+    	Node right;
+	*/
+	public static void levelOrder(Node root) {
+        if(root == null) return;
+  
+        Queue<Node> q = new LinkedList<Node>(); 
+          q.add(root);
+        while(!q.isEmpty()){
+            Node current = q.poll();
+            System.out.print(current.data + " ");
+            if(current.left != null){ q.add(current.left);}
+  
+            if(current.right != null){ q.add(current.right);}
+            //q.remove();
+        }
+        
+      }
