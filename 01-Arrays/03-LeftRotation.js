@@ -34,17 +34,10 @@ function main() {
 
     const a = readLine().split(' ').map(aTemp => parseInt(aTemp, 10));
 
-     for (let i = 0; i < d; i++) 
-          { 
-               leftRotatebyOne(a, n); 
-          }  console.log(...a);   
-
+    a.forEach((val, indx, arr) => {
+        let newIndex = indx - d >= 0 ? indx - d : n + (indx - d);
+        newArr[newIndex] = val;
+    });
+    console.log(newArr.join(' '));  
+    
 }
- function leftRotatebyOne( a,  n) 
-     { 
-        let i, temp = a[0]; 
-        for (i = 0; i < n - 1; i++) 
-            a[i] = a[i + 1]; 
-  
-        a[i] = temp; 
-    } 
